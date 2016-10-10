@@ -42,6 +42,10 @@ public function registerBundles()
 }
 ```
 
+## Run migrations.
+
+Either using ```doctrine:migrations:migrate``` or ```doctrine:schema:update```
+
 Configuration
 -------------
 
