@@ -16,7 +16,7 @@
 		"symfony/framework-bundle": "~2.2|~3.0",
 		"doctrine/doctrine-bundle": "~1.0",
 		"doctrine/orm": "~2.2",
-		"gedmo/doctrine-extensions": "~2.2.0"
+		"gedmo/doctrine-extensions": "2.3.*@dev"
 	},
 	"autoload": {
 		"psr-4": { "Sipsynergy\\ActivityStreamBundle\\": "" }
