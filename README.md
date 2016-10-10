@@ -45,12 +45,7 @@ public function registerBundles()
 Configuration
 -------------
 
-The Gaufrette bundle allows you to declare your filesystems as services without having to reach into the famous "Service Container".
-Indeed, you can do it with the configuration!
-
-The configuration of the Gaufrette bundle is divided into two parts: the `adapters` and the `filesystems`.
-
-### Configuring the Adapters
+### Configuring 
 
 If you wish to use your own default renderer, define it and point bundle to it.
 
