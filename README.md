@@ -15,7 +15,7 @@ This bundle can be installed using [composer](http://getcomposer.org) by adding 
 
 ``` json
     "require": {
-        // ...
+        ...
         "sipsynergy/activity-stream-bundle": "1.0.0"
     },
 ```
