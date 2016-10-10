@@ -6,12 +6,17 @@
 
     <parameters>
         <parameter key="activity_stream.twig.extension.action.class">Sipsynergy\ActivityStreamBundle\Twig\Extension\ActionExtension</parameter>
+        <parameter key="activity_stream.time.twig.extension.action.class">Sipsynergy\ActivityStreamBundle\Twig\Extension\TimeExtension</parameter>
     </parameters>
 
     <services>
         <service id="activity_stream.twig.extension.action" class="%activity_stream.twig.extension.action.class%">
             <tag name="twig.extension" alias="activity_stream_action" />
         	<argument type="service" id="service_container" />
+        </service>
+        <service id="activity_stream.time.twig.extension.action" class="%activity_stream.time.twig.extension.action.class%">
+            <tag name="twig.extension" alias="activity_stream_time" />
+            <argument type="service" id="service_container" />
         </service>
     </services>
     

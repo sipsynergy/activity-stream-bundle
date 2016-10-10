@@ -16,7 +16,6 @@
 		"symfony/framework-bundle": "~2.2|~3.0",
 		"doctrine/doctrine-bundle": "~1.0",
 		"doctrine/orm": "~2.2",
-		"knplabs/knp-time-bundle": "dev-master",
 		"gedmo/doctrine-extensions": "~2.2.0"
 	},
 	"autoload": {
