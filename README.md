@@ -9,18 +9,18 @@ Activity Stream Bundle is a PHP 5.6+ Symfony bundle providing a stream activity 
 Installation
 ------------
 
-## With composer
+### With composer
 
 This bundle can be installed using [composer](http://getcomposer.org) by adding the following in the `require` section of your `composer.json` file:
 
 ``` json
     "require": {
-        ...
+        // ...
         "sipsynergy/activity-stream-bundle": "1.0.0"
     },
 ```
 
-## Register the bundle
+### Register the bundle
 
 You must register the bundle in your kernel:
 
@@ -50,7 +50,7 @@ Indeed, you can do it with the configuration!
 
 The configuration of the Gaufrette bundle is divided into two parts: the `adapters` and the `filesystems`.
 
-## Configuring the Adapters
+### Configuring the Adapters
 
 If you wish to use your own default renderer, define it and point bundle to it.
 
