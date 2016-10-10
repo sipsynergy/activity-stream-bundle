@@ -2,7 +2,7 @@
 	"name": "sipsynergy/activity-stream-bundle",
 	"type": "symfony-bundle",
 	"description": "Activity Stream Bundle",
-	"keywords": ["oauth", "oauth2", "server"],
+	"keywords": ["stream", "activity", "log"],
 	"homepage": "https://github.com/sipsynergy",
 	"license": "MIT",
 	"authors": [
