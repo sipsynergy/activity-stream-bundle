@@ -62,8 +62,8 @@ sipsynergy_activity_stream:
 In order to create new render service just provide definition for it with appropriate tag.
 
 ```xml
-		<service id="activity_stream.renderer_custom" class="%activity_stream.renderer_custom.class%">
-			<argument type="service" id="router"/>
-			<tag name="activity_stream.renderer"/>
-		</service>
+<service id="activity_stream.renderer_custom" class="%activity_stream.renderer_custom.class%">
+    <argument type="service" id="router"/>
+    <tag name="activity_stream.renderer"/>
+</service>
 ```
