@@ -53,7 +53,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  * HTML Representation::
  *   <a href="http://oebfare.com/">brosner</a> commented on <a href="http://github.com/pinax/pinax">pinax/pinax</a> 2 hours ago
  *
- * @ORM\Table(name="app_activity_stream_actions",indexes={@ORM\Index(name="action_idx", columns={"actor_id", "actor_type", "date_added"})})
+ * @ORM\Table(name="activity_stream_actions",indexes={@ORM\Index(name="action_idx", columns={"actor_id", "actor_type", "date_added"})})
  * @ORM\Entity(repositoryClass="Sipsynergy\ActivityStreamBundle\EntityRepository\ActionRepository")
  */
 class Action implements ActionInterface

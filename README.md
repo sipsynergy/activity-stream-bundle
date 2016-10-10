@@ -1,4 +1,4 @@
-Activity Stream bundle
+Activity Stream Bundle
 ========================
 
 # Requirements
