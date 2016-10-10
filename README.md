@@ -1,7 +1,7 @@
 Activity Stream Bundle
 ======================
 
-About Activity Stream Bundle
+About
 ---------------
 
 Activity Stream Bundle is a PHP 5.6+ Symfony bundle providing a stream activity log management.
