@@ -16,7 +16,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('digital_activity_stream');
+        $rootNode = $treeBuilder->root('sipsynergy_activity_stream');
 
         $rootNode
             ->addDefaultsIfNotSet()
