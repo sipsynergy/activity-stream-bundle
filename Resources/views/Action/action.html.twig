@@ -1,0 +1,35 @@
+<div class="activity {% block custom_class %}{% endblock %}">
+
+	<span class="label label-inverse pull-right">
+		{{ time_diff(action.dateAdded) }}
+	</span>
+
+	{% if actor_url %}
+		<a href="{{ actor_url }}">{{ action.actor.streamString }}</a>
+	{% else %}
+		{{ action.actor.streamString }}
+	{% endif %}
+
+	{{ action.verb }}
+
+	{% if action.hasActionObject %}
+		{% if action_object_url %}
+			"<a href="{{ action_object_url }}">{{ action.actionObject.streamString | raw }}</a>"
+		{% else %}
+			"{{ action.actionObject.streamString | raw }}"
+		{% endif %}
+		on
+	{% endif %}
+
+	{% block target_content %}
+	{% if action.hasTarget %}
+		{% if target_url %}
+			<a href="{{ target_url }}">{{ action.target.streamString }}</a>
+		{% else %}
+			{{ action.target.streamString }}
+		{% endif %}
+	{% endif %}
+	{% endblock %}
+
+	{% block custom_content %}{% endblock %}
+</div>

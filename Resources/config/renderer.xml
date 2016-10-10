@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+	<parameters>
+		<parameter key="activity_stream.renderer_base.class">Sipsynergy\ActivityStreamBundle\Streamable\Renderer\Renderer</parameter>
+		<parameter key="activity_stream.renderer_provider.class">Sipsynergy\ActivityStreamBundle\Streamable\Renderer\RendererProvider</parameter>
+		<parameter key="activity_stream.renderer_post.class">Sipsynergy\ActivityStreamBundle\Streamable\Renderer\PostRenderer</parameter>
+		<parameter key="activity_stream.renderer_prize.class">Sipsynergy\ActivityStreamBundle\Streamable\Renderer\PrizeDrawRenderer</parameter>
+	</parameters>
+
+	<services>
+
+		<service id="activity_stream.renderer_provider" class="%activity_stream.renderer_provider.class%">
+			<argument type="service" id="activity_stream.renderer.default"/>
+		</service>
+
+		<service id="activity_stream.renderer.default" class="%activity_stream.renderer.default_class%" public="false">
+			<argument type="service" id="router"/>
+		</service>
+
+		<!--Custom Renderers-->
+		<service id="activity_stream.renderer_post" class="%activity_stream.renderer_post.class%">
+			<argument type="service" id="router"/>
+			<tag name="activity_stream.renderer"/>
+		</service>
+
+		<service id="activity_stream.renderer_prize" class="%activity_stream.renderer_prize.class%">
+			<argument type="service" id="router"/>
+			<tag name="activity_stream.renderer"/>
+		</service>
+
+	</services>
+
+</container>

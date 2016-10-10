@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+    	<parameter key="activity_stream.model.action.class">Sipsynergy\ActivityStreamBundle\Entity\Action</parameter>
+        <parameter key="activity_stream.action_manager.class">Sipsynergy\ActivityStreamBundle\Entity\ActionManager</parameter>
+        <parameter key="activity_stream.doctrine.action_subscriber.class">Sipsynergy\ActivityStreamBundle\Doctrine\Event\ActionSubscriber</parameter>
+    	<parameter key="activity_stream.doctrine.entity_resolver.class">Sipsynergy\ActivityStreamBundle\Streamable\Resolver\DoctrineEntityResolver</parameter>
+    </parameters>
+
+    <services>
+        <service id="activity_stream.action_manager" class="%activity_stream.action_manager.class%">
+            <argument type="service" id="doctrine.orm.entity_manager" />
+            <argument>%activity_stream.model.action.class%</argument>
+            <argument type="service" id="security.context" />
+        </service>
+        
+        <service id="activity_stream.doctrine.action_subscriber" class="%activity_stream.doctrine.action_subscriber.class%">
+            <tag name="doctrine.event_listener" event="postLoad" />
+            <argument type="service" id="activity_stream.resolver.chain" />
+        </service>
+
+        <service id="activity_stream.doctrine.entity_resolver" class="%activity_stream.doctrine.entity_resolver.class%">
+            <tag name="activity_stream.resolver" />
+        </service>
+    </services>
+
+</container>
