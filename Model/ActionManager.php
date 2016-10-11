@@ -87,9 +87,12 @@ abstract class ActionManager implements ActionManagerInterface
      * @param null                $actionObject
      * @param null                $actor
      *
+     * E.g. <actor> <verb> <action_object> <target> <time>
+     *      <mitsuhiko> <closed> <issue 70> on <mitsuhiko/flask> <about 3 hours ago>
+     *
      * @throws \LogicException
      */
-    public function send($verb, StreamableInterface $target = null, $actionObject = null, $actor = null)
+    public function send($actor = null, $verb, $actionObject = null, StreamableInterface $target = null)
     {
         $actor = $actor ?: $this->securityContext->getToken()->getUser();
         if (null === $actor) {
