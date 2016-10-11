@@ -5,7 +5,6 @@ namespace Sipsynergy\ActivityStreamBundle\Entity;
 use Sipsynergy\ActivityStreamBundle\Model\ActionInterface;
 use Sipsynergy\UserBundle\Entity\User;
 use Doctrine\ORM\Mapping as ORM;
-use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * Class Action
@@ -121,22 +120,19 @@ class Action implements ActionInterface
      * @var \DateTime
      *
      * @ORM\Column(name="date_added", type="datetime")
-     * @Gedmo\Timestampable(on="create")
      */
     private $date_added;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="date_modified", type="datetime")
-     * @Gedmo\Timestampable(on="update")
-     */
-    private $date_modified;
 
 
     protected $actor;
     protected $target;
     protected $actionObject;
+
+
+    public function __construct()
+    {
+        $this->date_added = new \DateTime;
+    }
 
 
     /**
